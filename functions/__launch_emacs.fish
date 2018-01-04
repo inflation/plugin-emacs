@@ -1,5 +1,6 @@
 function __launch_emacs
   set -l x (emacsclient --alternate-editor '' --eval '(x-display-list)' 2>/dev/null)
+  set -lx TERM xterm-24bit
 
   if test -z "$x" -o "$x" = nil
     emacsclient $argv --alternate-editor '' --create-frame
